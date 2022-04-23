@@ -54,7 +54,7 @@ const displayMenuItemsByCategory = (e) => {
     if(clickedCategory.id === "All"){
 
         // Site Başlangıcındaki default "all" gösterimi için forEach kullanıyorum.
-        writeTheMenuItems();
+        writeTheMenuItems(menu);
     }
     // Diğer bütün kategorileri aşağıda tek bir map döngüsü fonksiyonuna yolluyorum.
     else{
@@ -67,7 +67,7 @@ const selectCategoryBeforeDisplay = (clickedCategory) => {
 
     const clickedButtonId = clickedCategory.id;
 
-    const menuDeneme = menu.filter((menuItem) => {
+    const selectedItems = menu.filter((menuItem) => {
 
         return menuItem.category === clickedButtonId
 
@@ -83,7 +83,7 @@ const selectCategoryBeforeDisplay = (clickedCategory) => {
         }
     });
 
-    console.log(menuDeneme);
+    return writeTheMenuItems(selectedItems);
 }
 
 
@@ -91,11 +91,11 @@ allEventListeners();
 
 
 // Display All Menu Items As A Default //
-const writeTheMenuItems = () => {
+const writeTheMenuItems = (value) => {
 
     allMenuItems = "";
-    
-    menu.forEach((e) => {
+
+    value.forEach((e) => {
         
         allMenuItems += `<div class="menu-items col-lg-6 col-sm-12">
         <img src="${e.img}" alt="${e.title}" class="photo">
@@ -118,5 +118,5 @@ const writeTheMenuItems = () => {
     menuItemsField.innerHTML = allMenuItems;
 }
 
-writeTheMenuItems();
+
 
