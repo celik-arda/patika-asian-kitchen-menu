@@ -38,10 +38,11 @@ createTheAllButtons();
 
 const allButtons = document.querySelectorAll(".btn-item");
 
-
+// ALL EVENTS  //
 // Control The All Event Listeners In A Single Function //
 const allEventListeners = () => {
     
+    document.addEventListener("DOMContentLoaded",writeTheMenuItems(menu));
     buttonsField.addEventListener("click",displayMenuItemsByCategory);
 }
 
@@ -87,28 +88,27 @@ const selectCategoryBeforeDisplay = (clickedCategory) => {
 }
 
 
-allEventListeners();
 
 
 // Display All Menu Items As A Default //
 const writeTheMenuItems = (value) => {
-
+    
     allMenuItems = "";
-
+    
     value.forEach((e) => {
         
         allMenuItems += `<div class="menu-items col-lg-6 col-sm-12">
         <img src="${e.img}" alt="${e.title}" class="photo">
         <div class="menu-info">
-            <div class="menu-title">
-                <h4>
+        <div class="menu-title">
+        <h4>
                     ${e.title}
-                </h4>
-                <h4>
+                    </h4>
+                    <h4>
                     ${e.price}
-                </h4>
-            </div>
-            <div class="menu-text">
+                    </h4>
+                    </div>
+                    <div class="menu-text">
                 ${e.desc}
             </div>
         </div>
@@ -119,4 +119,4 @@ const writeTheMenuItems = (value) => {
 }
 
 
-
+allEventListeners();
