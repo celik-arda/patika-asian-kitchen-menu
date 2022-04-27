@@ -5,8 +5,6 @@
 const menuItemsField = document.querySelector(".section-center");
 const buttonsField = document.querySelector(".btn-container");
 
-
-
 //  !!!  Burada butonları doğrudan fonksiyonun içine yazıyla eklemek daha basit olacaktı ancak projede bu tarz kategori objeleri sonradan eklenebilir ya da revize edilebilir. Bunun daha kolay olması için ayrı bir array olarak oluşturup buton isimlerini bu array'in içinden gönderiyorum.  //
 const menuCategories = [
     
@@ -36,28 +34,32 @@ const createTheAllButtons = () => {
 createTheAllButtons();
 
 
-const allButtons = document.querySelectorAll(".btn-item");
 
 // ALL EVENTS  //
 // Control The All Event Listeners In A Single Function //
 const allEventListeners = () => {
     
     document.addEventListener("DOMContentLoaded",writeTheMenuItems(menu));
-    buttonsField.addEventListener("click",displayMenuItemsByCategory);
+    
+    const allButtons = document.querySelectorAll(".btn-item");
+    allButtons.forEach((everyEachButton) => {
+        everyEachButton.addEventListener("click",displayMenuItemsByCategory);
+    });
 }
 
 
-// Display The Menu Items in Terms of Category Buttons //
+// Display The Menu Items By Clicking Buttons //
 const displayMenuItemsByCategory = (e) => {
     
     const clickedCategory = e.target;
 
+    
     if(clickedCategory.id === "All"){
 
-        // Site Başlangıcındaki default "all" gösterimi için forEach kullanıyorum.
+        // "All" butonuna tıklandığında, doğrudan bütün menu array'imi temel sayfaya yazdırdığım forEach fonksiyonuma yoluyorum.
         writeTheMenuItems(menu);
     }
-    // Diğer bütün kategorileri aşağıda tek bir map döngüsü fonksiyonuna yolluyorum.
+    // Diğer bütün tıklanan kategorileri aşağıda tek bir map döngüsü fonksiyonuna yolluyorum.
     else{
         selectCategoryBeforeDisplay(clickedCategory);
     }
