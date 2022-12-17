@@ -1,7 +1,21 @@
-## Asian Kitchen Menu
+
+ <h1 align="center">Asian Kitchen Restaurant Menu</h1>
+
+---
+
+<div align="center">
+    <img src="./asian_kitchen_menu_project_image_.png">
+</div>
+
+</br>
+
+
+---
+
+</br>
 
 ### Ön Bilgilendirme
->Projede **"ana dal / main branch"** sadece proje başlangıcındaki ve sonundaki temel değişikliklerde kullanılmıştır. Esas geliştirme sürecinde kayıtlar **"dev-process"** dalına gönderilmiştir.
+Projede **"ana dal / main branch"** sadece proje başlangıcındaki ve sonundaki temel değişikliklerde kullanılmıştır. Esas geliştirme sürecinde kayıtlar **"dev-process"** dalına gönderilmiştir.
 
 ### Proje Hakkinda
 
