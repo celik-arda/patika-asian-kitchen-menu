@@ -4,7 +4,7 @@
 *.png
 *.jpg
 *.jpeg
-!asian_kitchen_menu_image.png
+!asian_kitchen_menu_project_image_.png
 
 # compiled output
 /dist
